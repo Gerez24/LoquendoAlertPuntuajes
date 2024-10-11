@@ -10,12 +10,16 @@ function addUser() {
     <div class="stars">
       ${[...Array(5)].map((_, i) => `<span class="star" data-value="${i + 1}">★</span>`).join('')}
     </div>
+    <button class="delete-btn">Eliminar</button>
   `;
   
   userList.appendChild(newUser);
   
   const stars = newUser.querySelectorAll('.star');
   stars.forEach(star => star.addEventListener('click', handleStarClick));
+  
+  const deleteBtn = newUser.querySelector('.delete-btn');
+  deleteBtn.addEventListener('click', () => newUser.remove());
 }
 
 function handleStarClick(e) {
