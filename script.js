@@ -35,10 +35,18 @@ function handleStarClick(e) {
 }
 
 function downloadList() {
+  const buttons = document.querySelectorAll('.controls, .delete-btn');
+  
+  // Esconder los botones antes de tomar la captura
+  buttons.forEach(button => button.style.display = 'none');
+  
   html2canvas(document.querySelector('.container')).then(canvas => {
     const link = document.createElement('a');
     link.download = 'lista-puntuacion.jpg';
     link.href = canvas.toDataURL('image/jpeg');
     link.click();
+    
+    // Mostrar los botones nuevamente después de tomar la captura
+    buttons.forEach(button => button.style.display = '');
   });
 }
