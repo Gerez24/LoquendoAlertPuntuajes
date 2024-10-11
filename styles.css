@@ -111,3 +111,29 @@ li .delete-btn:hover {
 .controls {
   margin-bottom: 20px;
 }
+/* Estilos para la captura */
+.container.capture-mode {
+  background: #ffffff;
+  color: #333;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: none;
+}
+
+.container.capture-mode li {
+  background-color: #f9f9f9;
+  color: #333;
+  box-shadow: none;
+}
+
+.container.capture-mode li input[type="text"] {
+  color: #333;
+}
+
+.container.capture-mode .stars .star.selected {
+  color: #f1c40f;
+}
+
+.container.capture-mode .stars .star {
+  color: #ccc;
+}
