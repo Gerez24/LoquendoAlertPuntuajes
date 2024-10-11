@@ -5,7 +5,7 @@ function addUser() {
   const userList = document.getElementById('userList');
   const newUser = document.createElement('li');
   
-  // Cambiamos el rango de 5 estrellas a 10 estrellas
+  // Generamos 10 estrellas en lugar de 5
   newUser.innerHTML = `
     <input type="text" placeholder="Nombre">
     <div class="stars">
@@ -24,12 +24,15 @@ function addUser() {
 }
 
 function handleStarClick(e) {
-  const value = e.target.getAttribute('data-value');
+  const value = parseInt(e.target.getAttribute('data-value'));
   const stars = e.target.parentElement.querySelectorAll('.star');
   
+  // Reseteamos todas las estrellas primero
+  stars.forEach(star => star.classList.remove('selected'));
+
+  // Solo seleccionamos hasta la estrella que fue clicada
   stars.forEach(star => {
-    star.classList.remove('selected');
-    if (star.getAttribute('data-value') <= value) {
+    if (parseInt(star.getAttribute('data-value')) <= value) {
       star.classList.add('selected');
     }
   });
