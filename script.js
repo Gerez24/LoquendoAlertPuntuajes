@@ -5,10 +5,11 @@ function addUser() {
   const userList = document.getElementById('userList');
   const newUser = document.createElement('li');
   
+  // Cambiamos el rango de 5 estrellas a 10 estrellas
   newUser.innerHTML = `
     <input type="text" placeholder="Nombre">
     <div class="stars">
-      ${[...Array(5)].map((_, i) => `<span class="star" data-value="${i + 1}">★</span>`).join('')}
+      ${[...Array(10)].map((_, i) => `<span class="star" data-value="${i + 1}">★</span>`).join('')}
     </div>
     <button class="delete-btn">Eliminar</button>
   `;
