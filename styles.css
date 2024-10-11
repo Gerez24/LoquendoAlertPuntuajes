@@ -1,55 +1,113 @@
-.container {
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 600px; /* Agrandamos el cuadro */
-  max-height: 80vh;
-  overflow-y: auto; /* Permitir scroll si la lista es muy larga */
+/* Fondo general */
+body {
+  background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
+/* Estilo del contenedor */
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  color: #fff;
+}
+
+/* Estilo para cada item (usuario) */
 li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
-  padding: 15px;
-  border-radius: 5px;
-  background-color: #f0f0f0;
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Input para el nombre del usuario */
 li input[type="text"] {
   border: none;
   background-color: transparent;
-  font-size: 18px; /* Aumentamos el tamaño del texto */
+  font-size: 18px;
+  color: #fff;
   width: 60%;
+  outline: none;
 }
 
+/* Estilo de las estrellas */
 .stars {
   display: flex;
   gap: 5px;
 }
 
 .star {
-  font-size: 24px; /* Aumentamos el tamaño de las estrellas */
+  font-size: 26px;
   cursor: pointer;
-  color: gray;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease;
 }
 
 .star.selected {
-  color: gold;
+  color: #f9ca24;
 }
 
+.star:hover {
+  color: #f9ca24;
+}
+
+/* Botón de eliminar */
 li .delete-btn {
   background-color: #e74c3c;
   border: none;
-  padding: 7px 12px;
-  border-radius: 5px;
+  padding: 8px 15px;
+  border-radius: 8px;
   color: white;
   cursor: pointer;
-  font-size: 16px; /* Aumentamos el tamaño del botón eliminar */
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
 li .delete-btn:hover {
   background-color: #c0392b;
+}
+
+/* Botones generales */
+.controls button {
+  background-color: #0984e3;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: #74b9ff;
+  transform: translateY(-3px);
+}
+
+/* Para el botón de añadir persona y descargar imagen */
+.controls {
+  margin-bottom: 20px;
 }
