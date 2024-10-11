@@ -85,3 +85,16 @@ button:hover {
 button span {
   margin-right: 10px;
 }
+li .delete-btn {
+  background-color: #e74c3c;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+li .delete-btn:hover {
+  background-color: #c0392b;
+}
